@@ -1,0 +1,6 @@
+$TTL 604800
+
+example.org. IN NS d1.example.org.
+d1.example.org. IN A 10.1.1.3
+
+; End of file

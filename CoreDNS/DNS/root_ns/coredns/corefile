@@ -1,0 +1,15 @@
+test.tcl {
+    unbound {
+        option root-hints "/etc/coredns/root-tcl.db"
+    }
+    log
+    errors
+}
+
+example.org {
+    unbound {
+        option root-hints "/etc/coredns/root-org.db"
+    }
+    log
+    errors
+}
