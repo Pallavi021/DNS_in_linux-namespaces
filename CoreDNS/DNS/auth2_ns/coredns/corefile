@@ -1,0 +1,13 @@
+example.org {
+    file  /etc/coredns/example.org.db
+    log
+	cache
+	errors
+}
+
+. {
+    forward 8.8.8.8 8.8.4.4
+    log
+    cache
+    errors
+}

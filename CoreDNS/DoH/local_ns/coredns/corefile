@@ -1,0 +1,24 @@
+https://test.tcl {
+    tls /etc/coredns/tls1.crt  /etc/coredns/tls1.key {
+        client_auth nocert    
+    }
+    unbound {
+        option root-hints "/etc/coredns/tcl.db"
+    }
+    log
+    errors
+}
+
+https://example.org {
+    tls /etc/coredns/tls1.crt  /etc/coredns/tls1.key {
+        client_auth nocert    
+    }
+    unbound {
+        option root-hints "/etc/coredns/org.db"
+    }
+    log
+    errors
+}
+
+
+
