@@ -1,6 +1,7 @@
 https://test.tcl {
-    tls /etc/coredns/tls1.crt  /etc/coredns/tls1.key {
-        client_auth nocert    
+    tls /etc/coredns/server.crt  /etc/coredns/server.key /etc/coredns/ca.crt {
+
+        client_auth verify_if_given    
     }
     unbound {
         option root-hints "/etc/coredns/tcl.db"
@@ -10,8 +11,8 @@ https://test.tcl {
 }
 
 https://example.org {
-    tls /etc/coredns/tls1.crt  /etc/coredns/tls1.key {
-        client_auth nocert    
+    tls /etc/coredns/server.crt  /etc/coredns/server.key /etc/coredns/ca.crt {
+        client_auth verify_if_given    
     }
     unbound {
         option root-hints "/etc/coredns/org.db"
