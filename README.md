@@ -31,9 +31,9 @@ go version
 Make sure your golang version is 1.17 or higher<br /> <br /> 
 5.) Install CoreDNS by giving following commands:<br /> <br /> 
 ```
-git clone https://github.com/coredns/coredns <br />
-cd coredns <br />
-make <br />
+git clone https://github.com/coredns/coredns 
+cd coredns 
+make 
 ```
  
 This should yield a coredns binary.<br /> <br /> 
@@ -43,26 +43,26 @@ sudo apt install libunbound-dev
 ```
  
 7.) Add unbound plugin to coreDNS by following steps as follow:<br /> <br /> 
-    a.) Update plugin.cfg file. This file contains the list of plugins along with the link to their github repository. For adding the unbound plugin append the following line to the plugin.cfg file.<br /> <br /> 
-    ```
-    unbound:github.com/coredns/unbound
-    ```
+Update plugin.cfg file. This file contains the list of plugins along with the link to their github repository. For adding the unbound plugin append the following line to the plugin.cfg file.<br /> <br /> 
+```
+unbound:github.com/coredns/unbound
+```
      
-    b.) Next, run the following command to install the plugin. (Note: Make sure to run this command inside the coredns directory)<br /> <br /> 
-    ```
-    go get github.com/coredns/unbound
-    ```
-    c.) Compile CoreDNS using the following commands:<br /> <br /> 
-    ```
-    go generate 
-    go build
-    ```
+Next, run the following command to install the plugin. (Note: Make sure to run this command inside the coredns directory)<br /> <br /> 
+```
+go get github.com/coredns/unbound
+```
+Compile CoreDNS using the following commands:<br /> <br /> 
+```
+go generate 
+go build
+```
         
-    Copy the coredns binary from the coredns folder to /usr/bin and create a directory 'coredns' in 'etc'.<br /> <br /> 
-    d.) To check if CoreDNS has the new plugin (unbound) run the following command. It will display the list of plugins present in CoreDNS.<br /> <br /> 
-    ```
-    coredns -plugins 
-    ```
+Copy the coredns binary from the coredns folder to /usr/bin and create a directory 'coredns' in 'etc'.<br /> <br /> 
+To check if CoreDNS has the new plugin (unbound) run the following command. It will display the list of plugins present in CoreDNS.<br /> <br /> 
+```
+coredns -plugins 
+```
         
 ### Installation steps for dnslookup
 
